@@ -1,12 +1,3 @@
-//initialize first book objects
-// let books = [
-//     {title: "House of flames", description: "Thriller"},// {id0, title: "House of flames", description: "Thriller"},
-//     {title: "The God of Endings", description: "Historical Fantasy"},
-//     {title: "The Four Winds", description: "Historical Fiction"},
-//     {title: "Percy Jackson The Battle of the Labyrinth", description: "Greek mythology, Fantasy, Adventure Fiction"},
-//     {title: "Harry Potter and the Philospher's Stone", description: "Fantasy, Adventure, Narrative"},
-// ]
-
 //object constructor function
 function Book(title,description) {
     this.title = title
@@ -22,13 +13,6 @@ let books = [
     new Book("Harry Potter and the Philospher's Stone", "Fantasy, Adventure")
 ]
 
-// function bookMaker(title,description) {
-//     let books = [{title,description}]
-// }
-// const newBook = new Book("House of flames","Thriller")  //class constructors using "new" keyword
-
-// let userTitle = document.getElementById("bookTitle").value
-// let userGenre = document.getElementById("bookGenre").value
 
 let bookList = document.createElement("div");
 
@@ -50,8 +34,8 @@ function createBookObjects() {
     let bookObjects = {}
     bookObjects.title = userTitle
     bookObjects.description = userGenre
-    const indexOfNewElement = books.length // 4 books  index = 0,1,2,3
-    books.push(bookObjects) // +1 5 books index = 0,1,2,3,4
+    const indexOfNewElement = books.length 
+    books.push(bookObjects) 
     document.getElementById("bookTitle").value = ""
     document.getElementById("bookGenre").value = "" //so everytime after the button is clicked the input fields are cleared
 
@@ -62,7 +46,8 @@ function createBookObjects() {
     bookList.appendChild(bookItem)
 }
 
-function editBook(index) { //instead of index use the ID of the book object, refer to line 2
+
+function editBook(index) {
     const newTitle = prompt("Edit new Title")
     const newGenre = prompt("Edit new Genre")
     let editObject = {
@@ -74,9 +59,11 @@ function editBook(index) { //instead of index use the ID of the book object, ref
     loadBooks()
 }
 
+
 function refreshList() {
     bookList.innerHTML = ""
 }
+
 
 function deleteBook(book) {
     books.splice(book,1)
@@ -84,10 +71,5 @@ function deleteBook(book) {
     loadBooks()
 }
 
-// function deleteBook() {
-//     this.parentElement.remove();
-// }
+
 document.getElementById("bookListContainer").appendChild(bookList)
-
-
-// const games = new Game
